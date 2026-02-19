@@ -12,8 +12,8 @@ const inter = Inter({
     display: 'swap',
 });
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }) {
-    const { lang } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang } = (await params) as { lang: Locale };
     const data = await getLandingPage(lang);
 
     if (!data || !data.seo) return { title: "Suelen Fonteles", description: "" };
@@ -47,9 +47,9 @@ export default async function SiteLayout({
     params,
 }: {
     children: React.ReactNode;
-    params: Promise<{ lang: Locale }>;
+    params: Promise<{ lang: string }>;
 }) {
-    const { lang } = await params;
+    const { lang } = (await params) as { lang: Locale };
     const data = await getLandingPage(lang);
 
     return (

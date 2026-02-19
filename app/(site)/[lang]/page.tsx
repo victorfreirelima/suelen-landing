@@ -7,8 +7,8 @@ import WhyWorkWithMe from "@/components/WhyWorkWithMe";
 import FinalCTA from "@/components/FinalCTA";
 import { getLandingPage, Locale } from "@/lib/content";
 
-export default async function LocalizedHomePage({ params }: { params: Promise<{ lang: Locale }> }) {
-    const { lang } = await params;
+export default async function LocalizedHomePage({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang } = (await params) as { lang: Locale };
     const data = await getLandingPage(lang);
 
     if (!data) return null;
