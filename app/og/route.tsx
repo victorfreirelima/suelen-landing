@@ -55,110 +55,31 @@ export async function GET(request: Request) {
                         alignItems: "center",
                         justifyContent: "center",
                         backgroundColor: "#FFFFFF",
-                        position: "relative",
+                        padding: "100px",
                     }}
                 >
-                    {/* Main Content Area (Safe Zone: 1000x430 inside 1200x630) */}
+                    {/* Centered Safe Area (700px wide) */}
                     <div
                         style={{
                             display: "flex",
-                            flexDirection: "row",
+                            flexDirection: "column",
                             alignItems: "center",
-                            justifyContent: "space-between",
-                            width: "1000px",
-                            height: "430px",
+                            textAlign: "center",
+                            width: "700px",
                         }}
                     >
-                        {/* Left Side: Text Stack */}
-                        <div
-                            style={{
-                                display: "flex",
-                                flexDirection: "column",
-                                flex: 1,
-                                height: "100%",
-                                justifyContent: "space-between",
-                                marginRight: "40px",
-                            }}
-                        >
-                            {/* Top: Branding */}
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        fontSize: "28px",
-                                        fontWeight: "300",
-                                        color: "#444444",
-                                        fontFamily: "sans-serif",
-                                        letterSpacing: "-0.01em",
-                                    }}
-                                >
-                                    Suelen Fonteles
-                                </div>
-                                <div
-                                    style={{
-                                        fontSize: "20px",
-                                        fontWeight: "300",
-                                        color: "#666666",
-                                        fontFamily: "sans-serif",
-                                        marginTop: "4px",
-                                    }}
-                                >
-                                    Performance Marketing
-                                </div>
-                            </div>
-
-                            {/* Center: Headline (Clamp to 2 lines) */}
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    fontSize: "60px",
-                                    fontWeight: "800",
-                                    color: "#111111",
-                                    lineHeight: 1.1,
-                                    fontFamily: "sans-serif",
-                                    margin: "20px 0",
-                                    maxHeight: "132px",
-                                    overflow: "hidden",
-                                }}
-                            >
-                                {headline.split(highlightWord).map((part: string, i: number, arr: string[]) => (
-                                    <span key={i}>
-                                        {part}
-                                        {i < arr.length - 1 && (
-                                            <span style={{ color: "#2563EB" }}>{highlightWord}</span>
-                                        )}
-                                    </span>
-                                ))}
-                            </div>
-
-                            {/* Bottom: Credibility */}
-                            <div
-                                style={{
-                                    fontSize: "20px",
-                                    color: "#666666",
-                                    fontFamily: "sans-serif",
-                                    fontWeight: "400",
-                                }}
-                            >
-                                Senior Performance Marketing Leader • 13+ Years
-                            </div>
-                        </div>
-
-                        {/* Right Side: Portrait */}
+                        {/* 1. Large Portrait Image */}
                         {portraitUrl && (
                             <div
                                 style={{
                                     display: "flex",
-                                    width: "400px",
-                                    height: "400px",
-                                    borderRadius: "24px",
+                                    width: "320px",
+                                    height: "320px",
+                                    borderRadius: "160px", // Full circle
                                     overflow: "hidden",
-                                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02)",
+                                    marginBottom: "40px",
+                                    border: "6px solid #F3F4F6", // Subtle off-white border
+                                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
                                 }}
                             >
                                 <img
@@ -169,10 +90,52 @@ export async function GET(request: Request) {
                                         objectFit: "cover",
                                         objectPosition: "center top",
                                     }}
-                                    alt="Portrait"
+                                    alt="Suelen Fonteles"
                                 />
                             </div>
                         )}
+
+                        {/* 2. Main Headline */}
+                        <div
+                            style={{
+                                fontSize: "72px",
+                                fontWeight: "900",
+                                color: "#000000",
+                                fontFamily: "sans-serif",
+                                marginBottom: "12px",
+                                letterSpacing: "-0.03em",
+                            }}
+                        >
+                            Suelen Fonteles
+                        </div>
+
+                        {/* 3. Accent Line */}
+                        <div
+                            style={{
+                                fontSize: "36px",
+                                fontWeight: "700",
+                                color: "#2563EB",
+                                fontFamily: "sans-serif",
+                                marginBottom: "24px",
+                                textTransform: "uppercase",
+                                letterSpacing: "0.05em",
+                            }}
+                        >
+                            Paid Media
+                        </div>
+
+                        {/* 4. Credibility Line */}
+                        <div
+                            style={{
+                                fontSize: "24px",
+                                fontWeight: "500",
+                                color: "#666666",
+                                fontFamily: "sans-serif",
+                                opacity: 0.8,
+                            }}
+                        >
+                            US & Canada Performance Marketing
+                        </div>
                     </div>
                 </div>
             ),
