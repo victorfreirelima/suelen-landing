@@ -38,10 +38,9 @@ export async function GET(request: Request) {
         const data = await client.fetch(query, { lang: sanityLang });
 
         const headline = data?.hero?.headline?.text || "Suelen Fonteles";
-        const subheadline = data?.hero?.subheadline?.text || "Paid Media Specialist";
-        const highlightWord = data?.hero?.highlightWord?.text || "Paid Media";
+        const subheadline = data?.hero?.subheadline?.text || "US & Canada Performance Marketing";
         const portraitUrl = data?.hero?.portraitImage
-            ? urlForImage(data.hero.portraitImage).width(600).height(600).url()
+            ? urlForImage(data.hero.portraitImage).width(1200).height(1200).url()
             : null;
 
         return new ImageResponse(
@@ -55,31 +54,30 @@ export async function GET(request: Request) {
                         alignItems: "center",
                         justifyContent: "center",
                         backgroundColor: "#FFFFFF",
-                        padding: "100px",
+                        padding: "200px", // 2x of 100px
                     }}
                 >
-                    {/* Centered Safe Area (700px wide) */}
+                    {/* Centered Safe Area (1400px wide at 2x) */}
                     <div
                         style={{
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",
                             textAlign: "center",
-                            width: "700px",
+                            width: "1400px",
                         }}
                     >
-                        {/* 1. Large Portrait Image */}
+                        {/* 1. Large Portrait Image (2x sized) */}
                         {portraitUrl && (
                             <div
                                 style={{
                                     display: "flex",
-                                    width: "320px",
-                                    height: "320px",
-                                    borderRadius: "160px", // Full circle
+                                    width: "640px", // 2x of 320px
+                                    height: "640px", // 2x of 320px
+                                    borderRadius: "320px", // 2x of 160px
                                     overflow: "hidden",
-                                    marginBottom: "40px",
-                                    border: "6px solid #F3F4F6", // Subtle off-white border
-                                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+                                    marginBottom: "80px", // 2x of 40px
+                                    backgroundColor: "#FFFFFF",
                                 }}
                             >
                                 <img
@@ -95,28 +93,28 @@ export async function GET(request: Request) {
                             </div>
                         )}
 
-                        {/* 2. Main Headline */}
+                        {/* 2. Main Name (2x sized) */}
                         <div
                             style={{
-                                fontSize: "72px",
+                                fontSize: "144px", // 2x of 72px
                                 fontWeight: "900",
                                 color: "#000000",
                                 fontFamily: "sans-serif",
-                                marginBottom: "12px",
+                                marginBottom: "24px", // 2x of 12px
                                 letterSpacing: "-0.03em",
                             }}
                         >
                             Suelen Fonteles
                         </div>
 
-                        {/* 3. Accent Line */}
+                        {/* 3. Specialty Accent (2x sized) */}
                         <div
                             style={{
-                                fontSize: "36px",
-                                fontWeight: "700",
-                                color: "#2563EB",
+                                fontSize: "72px", // 2x of 36px
+                                fontWeight: "800",
+                                color: "#1E40AF", // Stronger Blue (Blue-800)
                                 fontFamily: "sans-serif",
-                                marginBottom: "24px",
+                                marginBottom: "48px", // 2x of 24px
                                 textTransform: "uppercase",
                                 letterSpacing: "0.05em",
                             }}
@@ -124,14 +122,13 @@ export async function GET(request: Request) {
                             Paid Media
                         </div>
 
-                        {/* 4. Credibility Line */}
+                        {/* 4. Credibility Line (2x sized) */}
                         <div
                             style={{
-                                fontSize: "24px",
-                                fontWeight: "500",
-                                color: "#666666",
+                                fontSize: "48px", // 2x of 24px
+                                fontWeight: "700",
+                                color: "#000000", // Solid black for sharpness
                                 fontFamily: "sans-serif",
-                                opacity: 0.8,
                             }}
                         >
                             US & Canada Performance Marketing
@@ -140,8 +137,8 @@ export async function GET(request: Request) {
                 </div>
             ),
             {
-                width: 1200,
-                height: 630,
+                width: 2400, // 2x resolution
+                height: 1260, // 2x resolution
             }
         );
     } catch (error) {
