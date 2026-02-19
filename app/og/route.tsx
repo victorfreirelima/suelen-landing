@@ -54,83 +54,75 @@ export async function GET(request: Request) {
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        backgroundColor: "#f9fafb", // Light gray background
-                        background: "radial-gradient(circle at 50% 50%, #ffffff 0%, #f3f4f6 100%)", // Subtle radial gradient
+                        backgroundColor: "#FFFFFF",
+                        position: "relative",
                     }}
                 >
-                    {/* Safe Container */}
+                    {/* Main Content Area (Safe Zone: 1000x430 inside 1200x630) */}
                     <div
                         style={{
                             display: "flex",
                             flexDirection: "row",
                             alignItems: "center",
                             justifyContent: "space-between",
-                            width: "1040px",
-                            height: "470px",
-                            backgroundColor: "transparent",
+                            width: "1000px",
+                            height: "430px",
                         }}
                     >
-                        {/* Left Side: Content */}
+                        {/* Left Side: Text Stack */}
                         <div
                             style={{
                                 display: "flex",
                                 flexDirection: "column",
                                 flex: 1,
                                 height: "100%",
-                                justifyContent: "center",
+                                justifyContent: "space-between",
                                 marginRight: "40px",
                             }}
                         >
-                            {/* Brand Mark with Monogram */}
-                            <div
-                                style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    marginBottom: "32px",
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: "40px",
-                                        height: "40px",
-                                        borderRadius: "8px",
-                                        backgroundColor: "#1d4ed8",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        marginRight: "12px",
-                                        color: "white",
-                                        fontSize: "20px",
-                                        fontWeight: "bold",
-                                        fontFamily: "sans-serif",
-                                    }}
-                                >
-                                    S
-                                </div>
-                                <div
-                                    style={{
-                                        fontSize: "24px",
-                                        fontWeight: "600",
-                                        color: "#374151",
-                                        fontFamily: "sans-serif",
-                                    }}
-                                >
-                                    Suelen Fonteles
-                                </div>
-                            </div>
-
-                            {/* Headline */}
+                            {/* Top: Branding */}
                             <div
                                 style={{
                                     display: "flex",
                                     flexDirection: "column",
-                                    fontSize: "64px",
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        fontSize: "28px",
+                                        fontWeight: "300",
+                                        color: "#444444",
+                                        fontFamily: "sans-serif",
+                                        letterSpacing: "-0.01em",
+                                    }}
+                                >
+                                    Suelen Fonteles
+                                </div>
+                                <div
+                                    style={{
+                                        fontSize: "20px",
+                                        fontWeight: "300",
+                                        color: "#666666",
+                                        fontFamily: "sans-serif",
+                                        marginTop: "4px",
+                                    }}
+                                >
+                                    Performance Marketing
+                                </div>
+                            </div>
+
+                            {/* Center: Headline (Clamp to 2 lines) */}
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    fontSize: "60px",
                                     fontWeight: "800",
-                                    color: "#111827",
+                                    color: "#111111",
                                     lineHeight: 1.1,
-                                    marginBottom: "16px",
                                     fontFamily: "sans-serif",
-                                    maxHeight: "220px",
+                                    margin: "20px 0",
+                                    maxHeight: "132px",
                                     overflow: "hidden",
                                 }}
                             >
@@ -138,24 +130,22 @@ export async function GET(request: Request) {
                                     <span key={i}>
                                         {part}
                                         {i < arr.length - 1 && (
-                                            <span style={{ color: "#1d4ed8" }}>{highlightWord}</span>
+                                            <span style={{ color: "#2563EB" }}>{highlightWord}</span>
                                         )}
                                     </span>
                                 ))}
                             </div>
 
-                            {/* Subheadline */}
+                            {/* Bottom: Credibility */}
                             <div
                                 style={{
-                                    fontSize: "28px",
-                                    color: "#4b5563",
+                                    fontSize: "20px",
+                                    color: "#666666",
                                     fontFamily: "sans-serif",
-                                    maxWidth: "500px",
-                                    display: "flex",
-                                    lineHeight: 1.4,
+                                    fontWeight: "400",
                                 }}
                             >
-                                {subheadline}
+                                Senior Performance Marketing Leader • 13+ Years
                             </div>
                         </div>
 
@@ -164,12 +154,11 @@ export async function GET(request: Request) {
                             <div
                                 style={{
                                     display: "flex",
-                                    width: "420px",
-                                    height: "420px",
-                                    borderRadius: "32px",
+                                    width: "400px",
+                                    height: "400px",
+                                    borderRadius: "24px",
                                     overflow: "hidden",
-                                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                                    border: "8px solid white",
+                                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02)",
                                 }}
                             >
                                 <img
