@@ -16,29 +16,34 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     const { lang } = (await params) as { lang: Locale };
     const data = await getLandingPage(lang);
 
-    if (!data || !data.seo) return { title: "Suelen Fonteles", description: "" };
-
-    const { metaTitle, metaDescription, ogImage } = data.seo;
+    const title = data?.seo?.metaTitle?.text || "Suelen Fonteles";
+    const description = data?.seo?.metaDescription?.text || "";
+    const ogImageUrl = `/og?lang=${lang}`;
 
     return {
-        title: metaTitle.text,
-        description: metaDescription.text,
-        metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
+        title,
+        description,
+        metadataBase: new URL("https://suelen-landing.vercel.app"),
         openGraph: {
-            title: metaTitle.text,
-            description: metaDescription.text,
-            images: ogImage ? [urlForImage(ogImage).width(1200).height(630).url()] : [],
+            title,
+            description,
+            images: [
+                {
+                    url: ogImageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
             type: 'website',
             locale: lang === 'pt-br' ? 'pt_BR' : 'en_US',
         },
         twitter: {
             card: 'summary_large_image',
-            title: metaTitle.text,
-            description: metaDescription.text,
-            images: ogImage ? [urlForImage(ogImage).width(1200).height(630).url()] : [],
+            title,
+            description,
+            images: [ogImageUrl],
         },
-        // Security Headers handled in next.config.ts for best practice, 
-        // but some can be added here if needed for meta tags (not usual)
     };
 }
 
