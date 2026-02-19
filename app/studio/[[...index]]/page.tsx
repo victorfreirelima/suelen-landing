@@ -1,3 +1,4 @@
+import React from "react";
 import Studio from "./Studio";
 
 export const dynamic = "force-static";
