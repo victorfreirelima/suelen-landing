@@ -1,5 +1,5 @@
 export const siteSettingsQuery = `
-  *[_type == "siteSettings"][0] {
+  *[_type == "siteSettings" && !(_id in path("drafts.**"))][0] {
     siteName,
     logo,
     primaryCta,
@@ -13,7 +13,7 @@ export const siteSettingsQuery = `
 `;
 
 export const landingPageQuery = `
-  *[_type == "landingPage"][0] {
+  *[_type == "landingPage" && !(_id in path("drafts.**"))][0] {
     seo,
     hero,
     navigation[] {
