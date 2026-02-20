@@ -44,15 +44,15 @@ export default function FrameworksSection({ section, lang }: FrameworksSectionPr
             </div>
 
             {/* Right — Floating Card */}
-            <div className="bg-white p-[36px] rounded-[16px] border border-[#E5E7EB]/80 shadow-[0_20px_40px_rgba(0,0,0,0.08)] flex flex-col gap-[32px] mt-[8px]">
+            <div className="bg-[#EEF2F7] p-[40px] rounded-[24px] flex flex-col gap-[36px] mt-[8px]">
                 {section.sideCardSteps?.map((step, i) => (
-                    <div key={i} className="flex gap-[16px] items-start">
-                        <div className="flex-shrink-0 w-[28px] h-[28px] rounded-full bg-[#111827] text-white flex items-center justify-center text-[12px] font-semibold mt-[1px]">
+                    <div key={i} className="flex gap-[18px] items-start">
+                        <div className="flex-shrink-0 w-[40px] h-[40px] rounded-full bg-[#0F172A] text-white flex items-center justify-center text-[14px] font-bold mt-[2px]">
                             {i + 1}
                         </div>
                         <div>
-                            <h4 className="text-[14px] font-bold tracking-[-0.01em] text-[#111827] mb-[4px]">{pickLocalized<string>(step.title, lang)}</h4>
-                            <p className="text-[12px] text-[#6B7280] leading-[1.65] font-normal">{pickLocalized<string>(step.description, lang)}</p>
+                            <h4 className="text-[16px] font-bold tracking-[-0.01em] text-[#0F172A] mb-[6px]">{pickLocalized<string>(step.title, lang)}</h4>
+                            <p className="text-[13px] text-[#6B7280] leading-[1.7] font-normal">{pickLocalized<string>(step.description, lang)}</p>
                         </div>
                     </div>
                 ))}
