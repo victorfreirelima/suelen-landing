@@ -20,10 +20,12 @@ export default function CtaSection({ section, lang }: CtaSectionProps) {
     const subtitle = pickLocalized<string>(section.subtitle, lang);
 
     return (
-        <div className="text-center max-w-3xl mx-auto py-8">
-            <h2 className="text-3xl md:text-[2.5rem] font-extrabold tracking-tight mb-6">{title}</h2>
-            <p className="text-[17px] opacity-60 mb-10 leading-relaxed font-medium">{subtitle}</p>
-            <div className="flex flex-wrap justify-center gap-4">
+        <div className="text-center w-full flex flex-col items-center py-8">
+            <h2 className="text-[36px] font-extrabold tracking-[-0.01em] text-[#0A0F1F] mb-[20px]">{title}</h2>
+            <p className="text-[13px] text-[#4B5563] mb-[40px] leading-[1.7] font-normal max-w-[480px]">
+                {subtitle}
+            </p>
+            <div className="flex flex-wrap justify-center gap-[16px]">
                 {section.buttons?.map((btn, i) => {
                     const isLinkedIn = btn.href.toLowerCase().includes("linkedin");
                     const Icon = isLinkedIn ? Icons.Linkedin : Icons.Mail;
@@ -32,12 +34,12 @@ export default function CtaSection({ section, lang }: CtaSectionProps) {
                         <a
                             key={i}
                             href={btn.href}
-                            className={`flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-[14px] tracking-wide transition-all ${btn.variant === "primary"
-                                ? "bg-[#0A66C2] text-white hover:bg-[#084e96] shadow-md shadow-blue-900/10 border border-transparent"
-                                : "bg-white border border-gray-200 text-gray-800 hover:bg-gray-50 shadow-sm"
+                            className={`flex items-center justify-center gap-[10px] px-[24px] h-[48px] rounded-[10px] font-bold text-[13px] tracking-wide transition-all ${btn.variant === "primary"
+                                ? "bg-[#0A0F1F] text-white hover:bg-[#000000] shadow-[0_4px_14px_0_rgba(0,0,0,0.1)]"
+                                : "bg-white border border-[#E5E7EB] text-[#0A0F1F] hover:bg-gray-50 shadow-[0_1px_2px_0_rgba(0,0,0,0.05)]"
                                 }`}
                         >
-                            <Icon className="w-4 h-4" />
+                            <Icon className="w-[16px] h-[16px]" strokeWidth={2.5} />
                             {pickLocalized<string>(btn.label, lang)}
                         </a>
                     );

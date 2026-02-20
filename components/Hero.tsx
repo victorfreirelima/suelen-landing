@@ -25,35 +25,35 @@ export default function Hero({ lang, hero, siteSettings }: HeroProps) {
     const socialLinks = siteSettings?.socialLinks || [];
 
     return (
-        <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden bg-gradient-to-br from-indigo-50/50 via-white to-blue-50/50">
-            <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-center">
+        <section className="pt-[140px] pb-20 lg:pt-[190px] lg:pb-[140px] px-8 overflow-hidden bg-gradient-to-br from-[#EEF2FF] via-white to-[#EFF6FF]">
+            <div className="max-w-[1200px] mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-center">
                 {/* Left Content */}
-                <div className="max-w-xl">
+                <div className="max-w-[580px]">
                     {badgeText && (
-                        <div className="inline-flex items-center py-1.5 px-3 rounded-md bg-blue-50/80 border border-blue-100 mb-8">
-                            <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mr-2" />
-                            <span className="text-blue-700 text-[10px] font-bold uppercase tracking-widest">
+                        <div className="inline-flex items-center h-8 px-3 rounded-full bg-[#EFF6FF] border border-[#DEEAFB] mb-[30px]">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#205BF0] mr-2" />
+                            <span className="text-[#205BF0] text-[9.5px] font-bold uppercase tracking-[0.08em] mt-[1px]">
                                 {badgeText}
                             </span>
                         </div>
                     )}
-                    <h1 className="text-5xl lg:text-[4.5rem] font-extrabold leading-[1.05] tracking-tight mb-6">
+                    <h1 className="text-[64px] font-extrabold leading-[1.02] tracking-[-0.02em] mb-7">
                         {headlineParts.map((part, i) => (
                             i % 2 === 1 ? (
-                                <span key={i} className="text-blue-600 block mt-2">
+                                <span key={i} className="text-[#205BF0] block mt-1">
                                     {part}
                                 </span>
                             ) : part
                         ))}
                     </h1>
-                    <p className="text-lg opacity-60 mb-10 leading-relaxed font-medium">
+                    <p className="text-[17px] text-[#4B5563] leading-[1.65] font-normal mb-11 max-w-[520px]">
                         {subheadline}
                     </p>
-                    <div className="flex flex-wrap gap-4 mb-10">
+                    <div className="flex flex-wrap gap-[14px] mb-[44px]">
                         {primaryCta && (
                             <a
                                 href={primaryCta.href}
-                                className="bg-[#0A0F1F] text-white px-8 py-3.5 rounded-xl font-bold text-[13px] tracking-wide hover:bg-black transition-all"
+                                className="bg-[#0A0F1F] text-white px-7 py-3.5 rounded-[10px] font-bold text-[13px] tracking-wide hover:bg-black transition-all shadow-[0_4px_14px_0_rgba(0,0,0,0.1)]"
                             >
                                 {pickLocalized<string>(primaryCta.label, lang)}
                             </a>
@@ -61,19 +61,19 @@ export default function Hero({ lang, hero, siteSettings }: HeroProps) {
                         {secondaryCta && (
                             <a
                                 href={secondaryCta.href}
-                                className="bg-white border border-gray-200 text-black px-8 py-3.5 rounded-xl font-bold text-[13px] tracking-wide hover:bg-gray-50 transition-all"
+                                className="bg-white border border-gray-200 text-black px-7 py-3.5 rounded-[10px] font-bold text-[13px] tracking-wide hover:bg-gray-50 transition-all"
                             >
                                 {pickLocalized<string>(secondaryCta.label, lang)}
                             </a>
                         )}
                     </div>
 
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-[14px]">
                         {socialLinks.map((link: any, i: number) => {
                             const Icon = (Icons as any)[link.iconKey] || Icons.Share2;
                             return (
-                                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center rounded-md bg-gray-100/80 text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-colors">
-                                    <Icon className="w-[18px] h-[18px]" />
+                                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 flex items-center justify-center rounded-md bg-[#F3F4F6] text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-colors">
+                                    <Icon className="w-4 h-4" />
                                 </a>
                             );
                         })}
@@ -81,9 +81,9 @@ export default function Hero({ lang, hero, siteSettings }: HeroProps) {
                 </div>
 
                 {/* Right Image Card */}
-                <div className="relative md:ml-10">
-                    <div className="absolute inset-0 bg-[#f1f1f1] rounded-[2rem] translate-x-3 translate-y-3 -z-10"></div>
-                    <div className="relative z-10 w-full aspect-[4/4.5] rounded-[2rem] overflow-hidden bg-gray-50 border-[10px] sm:border-[16px] border-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+                <div className="relative lg:ml-12 mt-6 lg:mt-0">
+                    <div className="absolute inset-0 bg-[#f1f1f1] rounded-[24px] translate-x-4 translate-y-4 -z-10"></div>
+                    <div className="relative z-10 w-full aspect-[4/4.5] rounded-[24px] overflow-hidden bg-gray-50 border-[10px] sm:border-[12px] border-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)]">
                         {hero.portraitImage ? (
                             <Image
                                 src={urlForImage(hero.portraitImage).width(900).height(1200).url()}

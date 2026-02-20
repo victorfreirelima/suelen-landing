@@ -35,21 +35,21 @@ export default function SectionRenderer({ section, lang }: SectionProps) {
     const bgClasses: Record<string, string> = {
         white: "bg-white text-gray-900",
         gray: "bg-[#F8F9FA] text-gray-900",
-        black: "bg-[#0A0F1F] text-white",
+        black: "bg-gradient-to-b from-[#111827] to-[#0A0F1F] text-white",
         brand: "bg-[#205BF0] text-white",
     };
 
     // Map paddingStyle to Tailwind classes
     const paddingClasses: Record<string, string> = {
-        normal: "py-16 md:py-24",
-        compact: "py-8 md:py-12",
-        spacious: "py-24 md:py-32",
+        normal: "py-20 lg:py-24",
+        compact: "py-10 lg:py-16",
+        spacious: "py-28 lg:py-36",
     };
 
     // Map maxWidth to Tailwind classes
     const maxWidthClasses: Record<string, string> = {
-        default: "max-w-7xl",
-        narrow: "max-w-4xl",
+        default: "max-w-[1200px]",
+        narrow: "max-w-[900px]",
         wide: "max-w-[1440px]",
     };
 
@@ -59,7 +59,7 @@ export default function SectionRenderer({ section, lang }: SectionProps) {
             className={`${bgClasses[section.backgroundStyle] || bgClasses.white} ${paddingClasses[section.paddingStyle] || paddingClasses.normal
                 }`}
         >
-            <div className={`mx-auto px-4 sm:px-6 lg:px-8 ${maxWidthClasses[section.maxWidth] || maxWidthClasses.default}`}>
+            <div className={`mx-auto px-8 ${maxWidthClasses[section.maxWidth] || maxWidthClasses.default}`}>
                 <Component section={section} lang={lang} />
             </div>
         </section>
