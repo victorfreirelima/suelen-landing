@@ -26,21 +26,19 @@ export async function GET(request: Request) {
     try {
         const query = `
       *[_type == "landingPage"][0] {
-        hero {
-          headline { "text": select($lang == "en" => en, ptBR) },
-          highlightWord { "text": select($lang == "en" => en, ptBR) },
-          subheadline { "text": select($lang == "en" => en, ptBR) },
-          portraitImage
-        }
+        seo,
+        hero
       }
     `;
 
-        const data = await client.fetch(query, { lang: sanityLang });
+        const data = await client.fetch(query);
+        const hero = data?.hero;
+        const seo = data?.seo;
 
-        const headline = data?.hero?.headline?.text || "Suelen Fonteles";
-        const subheadline = data?.hero?.subheadline?.text || "US & Canada Performance Marketing";
-        const portraitUrl = data?.hero?.portraitImage
-            ? urlForImage(data.hero.portraitImage).width(1200).height(1200).url()
+        const headline = (hero?.headline?.[sanityLang] || hero?.headline?.en || "Suelen Fonteles").replace(/\|/g, "");
+        const subheadline = hero?.subheadline?.[sanityLang] || hero?.subheadline?.en || "US & Canada Performance Marketing";
+        const portraitUrl = hero?.portraitImage
+            ? urlForImage(hero.portraitImage).width(1200).height(1200).url()
             : null;
 
         return new ImageResponse(

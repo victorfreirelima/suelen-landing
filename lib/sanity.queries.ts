@@ -1,95 +1,108 @@
+export const siteSettingsQuery = `
+  *[_type == "siteSettings"][0] {
+    siteName,
+    logo,
+    primaryCta,
+    secondaryCta,
+    socialLinks,
+    languages,
+    defaultLocale,
+    analytics,
+    seoDefaults
+  }
+`;
+
 export const landingPageQuery = `
   *[_type == "landingPage"][0] {
-    navbar {
-      brandName { "text": select($lang == "en" => en, ptBR) },
-      navLinks[] { 
-        label { "text": select($lang == "en" => en, ptBR) },
-        anchorId 
+    seo,
+    hero,
+    navigation[] {
+      id,
+      label,
+      targetSectionId
+    },
+    sections[] {
+      _type,
+      sectionId,
+      enabled,
+      backgroundStyle,
+      paddingStyle,
+      maxWidth,
+      
+      // Fields for statsSection
+      _type == "statsSection" => {
+        title,
+        body,
+        stats[] {
+          label,
+          value
+        }
       },
-      ctaButton { 
-        label { "text": select($lang == "en" => en, ptBR) },
-        anchorId 
-      }
-    },
-    hero {
-      labelPill { "text": select($lang == "en" => en, ptBR) },
-      headline { "text": select($lang == "en" => en, ptBR) },
-      highlightWord { "text": select($lang == "en" => en, ptBR) },
-      subheadline { "text": select($lang == "en" => en, ptBR) },
-      primaryCTA { 
-        label { "text": select($lang == "en" => en, ptBR) },
-        anchorId 
+      
+      // Fields for expertiseGridSection
+      _type == "expertiseGridSection" => {
+        title,
+        subtitle,
+        cards[] {
+          title,
+          description,
+          iconKey
+        }
       },
-      secondaryCTA { 
-        label { "text": select($lang == "en" => en, ptBR) },
-        anchorId 
+      
+      // Fields for frameworksSection
+      _type == "frameworksSection" => {
+        title,
+        body,
+        bullets,
+        sideCardSteps[] {
+          title,
+          description
+        }
       },
-      portraitImage,
-      socialLinks[] { iconName, url }
-    },
-    impactSection {
-      heading { "text": select($lang == "en" => en, ptBR) },
-      body { "text": select($lang == "en" => en, ptBR) },
-      stats[] {
-        label { "text": select($lang == "en" => en, ptBR) },
-        value
-      }
-    },
-    coreExpertise {
-      heading { "text": select($lang == "en" => en, ptBR) },
-      subtitle { "text": select($lang == "en" => en, ptBR) },
-      cards[] {
-        iconName,
-        title { "text": select($lang == "en" => en, ptBR) },
-        description { "text": select($lang == "en" => en, ptBR) }
-      }
-    },
-    frameworksSection {
-      heading { "text": select($lang == "en" => en, ptBR) },
-      body { "text": select($lang == "en" => en, ptBR) },
-      bullets[] { "text": select($lang == "en" => en, ptBR) },
-      rightCardSteps[] {
-        number,
-        title { "text": select($lang == "en" => en, ptBR) },
-        description { "text": select($lang == "en" => en, ptBR) }
-      }
-    },
-    professionalJourney {
-      heading { "text": select($lang == "en" => en, ptBR) },
-      roles[] {
-        title { "text": select($lang == "en" => en, ptBR) },
-        org { "text": select($lang == "en" => en, ptBR) },
-        dateBadge,
-        bullets[] { "text": select($lang == "en" => en, ptBR) }
-      }
-    },
-    whyWorkWithMe {
-      heading { "text": select($lang == "en" => en, ptBR) },
-      features[] {
-        title { "text": select($lang == "en" => en, ptBR) },
-        description { "text": select($lang == "en" => en, ptBR) }
+      
+      // Fields for journeySection
+      _type == "journeySection" => {
+        title,
+        roles[] {
+          title,
+          companyLine,
+          dates,
+          bullets
+        }
       },
-      testimonial {
-        quote { "text": select($lang == "en" => en, ptBR) },
-        name,
-        roleCompany { "text": select($lang == "en" => en, ptBR) }
+      
+      // Fields for testimonialsSection
+      _type == "testimonialsSection" => {
+        title,
+        testimonials[] {
+          quote,
+          name,
+          role,
+          company
+        }
+      },
+      
+      // Fields for ctaSection
+      _type == "ctaSection" => {
+        title,
+        subtitle,
+        buttons[] {
+          label,
+          href,
+          variant
+        }
+      },
+      
+      // Fields for footerSection
+      _type == "footerSection" => {
+        copyright,
+        locationLine,
+        links[] {
+          label,
+          href
+        }
       }
-    },
-    finalCTA {
-      heading { "text": select($lang == "en" => en, ptBR) },
-      body { "text": select($lang == "en" => en, ptBR) },
-      buttons[] {
-        label { "text": select($lang == "en" => en, ptBR) },
-        url
-      }
-    },
-    footer {
-      smallText { "text": select($lang == "en" => en, ptBR) }
-    },
-    seo {
-      metaTitle { "text": select($lang == "en" => en, ptBR) },
-      metaDescription { "text": select($lang == "en" => en, ptBR) },
-      ogImage
     }
   }
 `;

@@ -5,246 +5,78 @@ export const landingPage = defineType({
     title: "Landing Page",
     type: "document",
     fields: [
-        // Navbar
+        // SEO (Localized)
         defineField({
-            name: "navbar",
-            title: "Navbar",
+            name: "seo",
+            title: "SEO settings",
             type: "object",
             fields: [
-                defineField({ name: "brandName", type: "localeString" }),
-                defineField({
-                    name: "navLinks",
-                    type: "array",
-                    of: [
-                        {
-                            type: "object",
-                            fields: [
-                                defineField({ name: "label", type: "localeString" }),
-                                defineField({ name: "anchorId", type: "string" }),
-                            ],
-                        },
-                    ],
-                }),
-                defineField({
-                    name: "ctaButton",
-                    type: "object",
-                    fields: [
-                        defineField({ name: "label", type: "localeString" }),
-                        defineField({ name: "anchorId", type: "string" }),
-                    ],
-                }),
+                defineField({ name: "title", type: "localeString" }),
+                defineField({ name: "description", type: "localeText" }),
+                defineField({ name: "ogImage", type: "image", options: { hotspot: true } }),
             ],
         }),
-        // Hero
+        // Hero (Localized)
         defineField({
             name: "hero",
             title: "Hero Section",
             type: "object",
             fields: [
-                defineField({ name: "labelPill", type: "localeString" }),
-                defineField({ name: "headline", type: "localeString" }),
-                defineField({ name: "highlightWord", type: "localeString" }),
+                defineField({ name: "badgeText", type: "localeString" }),
+                defineField({
+                    name: "headline",
+                    type: "localeString",
+                    description: "Use |word| to highlight a segment (e.g. 'Expert in |Paid Media|')",
+                }),
                 defineField({ name: "subheadline", type: "localeText" }),
+                defineField({ name: "portraitImage", type: "image", options: { hotspot: true } }),
                 defineField({
-                    name: "primaryCTA",
+                    name: "primaryCta",
                     type: "object",
                     fields: [
                         defineField({ name: "label", type: "localeString" }),
-                        defineField({ name: "anchorId", type: "string" }),
+                        defineField({ name: "href", type: "string" }),
                     ],
                 }),
                 defineField({
-                    name: "secondaryCTA",
+                    name: "secondaryCta",
                     type: "object",
                     fields: [
                         defineField({ name: "label", type: "localeString" }),
-                        defineField({ name: "anchorId", type: "string" }),
-                    ],
-                }),
-                defineField({ name: "portraitImage", title: "Portrait Image", type: "image", options: { hotspot: true } }),
-                defineField({
-                    name: "socialLinks",
-                    type: "array",
-                    of: [
-                        {
-                            type: "object",
-                            fields: [
-                                defineField({ name: "iconName", type: "string" }),
-                                defineField({ name: "url", type: "url" }),
-                            ],
-                        },
+                        defineField({ name: "href", type: "string" }),
                     ],
                 }),
             ],
         }),
-        // Impact
+        // Navigation (Localized)
         defineField({
-            name: "impactSection",
-            title: "Impact Section",
-            type: "object",
-            fields: [
-                defineField({ name: "heading", type: "localeString" }),
-                defineField({ name: "body", type: "localeText" }),
-                defineField({
-                    name: "stats",
-                    type: "array",
-                    of: [
-                        {
-                            type: "object",
-                            fields: [
-                                defineField({ name: "label", type: "localeString" }),
-                                defineField({ name: "value", type: "string" }),
-                            ],
-                        },
-                    ],
-                }),
-            ],
-        }),
-        // Core Expertise
-        defineField({
-            name: "coreExpertise",
-            title: "Core Expertise",
-            type: "object",
-            fields: [
-                defineField({ name: "heading", type: "localeString" }),
-                defineField({ name: "subtitle", type: "localeString" }),
-                defineField({
-                    name: "cards",
-                    type: "array",
-                    of: [
-                        {
-                            type: "object",
-                            fields: [
-                                defineField({ name: "iconName", type: "string" }),
-                                defineField({ name: "title", type: "localeString" }),
-                                defineField({ name: "description", type: "localeText" }),
-                            ],
-                        },
-                    ],
-                }),
-            ],
-        }),
-        // Frameworks
-        defineField({
-            name: "frameworksSection",
-            title: "Frameworks Section",
-            type: "object",
-            fields: [
-                defineField({ name: "heading", type: "localeString" }),
-                defineField({ name: "body", type: "localeText" }),
-                defineField({ name: "bullets", type: "array", of: [{ type: "localeString" }] }),
-                defineField({
-                    name: "rightCardSteps",
-                    type: "array",
-                    of: [
-                        {
-                            type: "object",
-                            fields: [
-                                defineField({ name: "number", type: "string" }),
-                                defineField({ name: "title", type: "localeString" }),
-                                defineField({ name: "description", type: "localeText" }),
-                            ],
-                        },
-                    ],
-                }),
-            ],
-        }),
-        // Professional Journey
-        defineField({
-            name: "professionalJourney",
-            title: "Professional Journey",
-            type: "object",
-            fields: [
-                defineField({ name: "heading", type: "localeString" }),
-                defineField({
-                    name: "roles",
-                    type: "array",
-                    of: [
-                        {
-                            type: "object",
-                            fields: [
-                                defineField({ name: "title", type: "localeString" }),
-                                defineField({ name: "org", type: "localeString" }),
-                                defineField({ name: "dateBadge", type: "string" }),
-                                defineField({ name: "bullets", type: "array", of: [{ type: "localeString" }] }),
-                            ],
-                        },
-                    ],
-                }),
-            ],
-        }),
-        // Why Work With Me
-        defineField({
-            name: "whyWorkWithMe",
-            title: "Why Work With Me",
-            type: "object",
-            fields: [
-                defineField({ name: "heading", type: "localeString" }),
-                defineField({
-                    name: "features",
-                    type: "array",
-                    of: [
-                        {
-                            type: "object",
-                            fields: [
-                                defineField({ name: "title", type: "localeString" }),
-                                defineField({ name: "description", type: "localeText" }),
-                            ],
-                        },
-                    ],
-                }),
-                defineField({
-                    name: "testimonial",
+            name: "navigation",
+            title: "Navigation items",
+            type: "array",
+            of: [
+                {
                     type: "object",
                     fields: [
-                        defineField({ name: "quote", type: "localeText" }),
-                        defineField({ name: "name", type: "string" }),
-                        defineField({ name: "roleCompany", title: "Role/Company Label", type: "localeString" }),
+                        defineField({ name: "id", title: "Unique ID", type: "string" }),
+                        defineField({ name: "label", type: "localeString" }),
+                        defineField({ name: "targetSectionId", title: "Target Section ID", type: "string" }),
                     ],
-                }),
+                },
             ],
         }),
-        // Final CTA
+        // Sections (Reorderable blocks)
         defineField({
-            name: "finalCTA",
-            title: "Final CTA",
-            type: "object",
-            fields: [
-                defineField({ name: "heading", type: "localeString" }),
-                defineField({ name: "body", type: "localeText" }),
-                defineField({
-                    name: "buttons",
-                    type: "array",
-                    of: [
-                        {
-                            type: "object",
-                            fields: [
-                                defineField({ name: "label", type: "localeString" }),
-                                defineField({ name: "url", type: "url" }),
-                            ],
-                        },
-                    ],
-                }),
-            ],
-        }),
-        // Footer
-        defineField({
-            name: "footer",
-            title: "Footer Section",
-            type: "object",
-            fields: [
-                defineField({ name: "smallText", type: "localeString" }),
-            ],
-        }),
-        // SEO
-        defineField({
-            name: "seo",
-            title: "SEO Section",
-            type: "object",
-            fields: [
-                defineField({ name: "metaTitle", type: "localeString" }),
-                defineField({ name: "metaDescription", type: "localeText" }),
-                defineField({ name: "ogImage", type: "image" }),
+            name: "sections",
+            title: "Page Sections",
+            type: "array",
+            of: [
+                { type: "statsSection" },
+                { type: "expertiseGridSection" },
+                { type: "frameworksSection" },
+                { type: "journeySection" },
+                { type: "testimonialsSection" },
+                { type: "ctaSection" },
+                { type: "footerSection" },
             ],
         }),
     ],

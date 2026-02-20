@@ -1,27 +1,22 @@
 import Hero from "@/components/Hero";
-import ImpactBand from "@/components/ImpactBand";
-import CoreExpertise from "@/components/CoreExpertise";
-import Frameworks from "@/components/Frameworks";
-import ProfessionalJourney from "@/components/ProfessionalJourney";
-import WhyWorkWithMe from "@/components/WhyWorkWithMe";
-import FinalCTA from "@/components/FinalCTA";
-import { getLandingPage, Locale } from "@/lib/content";
+import SectionRenderer from "@/components/sections/SectionRenderer";
+import { getLandingPage, getSiteSettings, Locale } from "@/lib/content";
 
 export default async function LocalizedHomePage({ params }: { params: Promise<{ lang: string }> }) {
     const { lang } = (await params) as { lang: Locale };
-    const data = await getLandingPage(lang);
+    const [landingPage, siteSettings] = await Promise.all([
+        getLandingPage(lang),
+        getSiteSettings(),
+    ]);
 
-    if (!data) return null;
+    if (!landingPage) return null;
 
     return (
         <main>
-            <Hero lang={lang} data={data.hero} />
-            <ImpactBand data={data.impactSection} />
-            <CoreExpertise data={data.coreExpertise} />
-            <Frameworks data={data.frameworksSection} />
-            <ProfessionalJourney data={data.professionalJourney} />
-            <WhyWorkWithMe data={data.whyWorkWithMe} />
-            <FinalCTA data={data.finalCTA} />
+            <Hero lang={lang} hero={landingPage.hero} siteSettings={siteSettings} />
+            {landingPage.sections?.map((section: any, i: number) => (
+                <SectionRenderer key={section.sectionId || i} section={section} lang={lang} />
+            ))}
         </main>
     );
 }

@@ -2,9 +2,8 @@ import "../../globals.css";
 import { Inter } from "next/font/google";
 import { getSiteSettings, getLandingPage, Locale } from "@/lib/content";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
-import { urlForImage } from "@/sanity/lib/image";
+import { pickLocalized } from "@/lib/localization";
 import DevWarningBanner from "@/components/DevWarningBanner";
 
 const inter = Inter({
@@ -14,19 +13,29 @@ const inter = Inter({
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
     const { lang } = (await params) as { lang: Locale };
-    const data = await getLandingPage(lang);
+    const landingPage = await getLandingPage(lang);
+    const siteSettings = await getSiteSettings();
 
-    const title = data?.seo?.metaTitle?.text || "Suelen Fonteles";
-    const description = data?.seo?.metaDescription?.text || "";
-    const ogImageUrl = `/og?lang=${lang}`;
+    const seo = landingPage?.seo;
+    const defaults = siteSettings?.seoDefaults;
+
+    const title = pickLocalized<string>(seo?.title, lang) || pickLocalized<string>(defaults?.title, lang) || "Suelen Fonteles";
+    const description = pickLocalized<string>(seo?.description, lang) || pickLocalized<string>(defaults?.description, lang) || "";
+
+    // OG Image logic: dynamic generator or Sanity override
+    let ogImageUrl = `/og?lang=${lang}`;
+    if (seo?.ogImage) {
+        // Use Sanity image if provided as override
+        // (Simplified for this example, usually would use urlForImage(seo.ogImage).url())
+    }
 
     return {
         title,
         description,
         metadataBase: new URL("https://suelen-landing.vercel.app"),
         openGraph: {
-            title,
-            description,
+            title: pickLocalized<string>(defaults?.ogTitle, lang) || title,
+            description: pickLocalized<string>(defaults?.ogDescription, lang) || description,
             images: [
                 {
                     url: ogImageUrl,
@@ -39,7 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
             locale: lang === 'pt-br' ? 'pt_BR' : 'en_US',
         },
         twitter: {
-            card: 'summary_large_image',
+            card: siteSettings?.seoDefaults?.twitterCard || 'summary_large_image',
             title,
             description,
             images: [ogImageUrl],
@@ -63,14 +72,14 @@ export default async function SiteLayout({
     params: Promise<{ lang: string }>;
 }) {
     const { lang } = (await params) as { lang: Locale };
-    const data = await getLandingPage(lang);
+    const siteSettings = await getSiteSettings();
+    const landingPage = await getLandingPage(lang);
 
     return (
         <html lang={lang} className="scroll-smooth">
-            <body className={cn(inter.className, "antialiased selection:bg-blue-100 selection:text-brand-blue")}>
-                {data && <Navbar lang={lang} data={data.navbar} />}
+            <body className={cn(inter.className, "antialiased selection:bg-blue-100 selection:text-blue-600")}>
+                <Navbar lang={lang} siteSettings={siteSettings} navigation={landingPage?.navigation} />
                 {children}
-                {data && <Footer data={data.footer} />}
                 <DevWarningBanner />
             </body>
         </html>

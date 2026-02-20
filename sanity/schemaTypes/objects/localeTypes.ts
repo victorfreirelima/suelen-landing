@@ -19,3 +19,13 @@ export const localeText = defineType({
         defineField({ name: "ptBR", title: "Portuguese (Brazil)", type: "text" }),
     ],
 });
+
+export const localeImage = defineType({
+    name: "localeImage",
+    title: "Localized Image",
+    type: "object",
+    fields: [
+        defineField({ name: "en", title: "English", type: "image", options: { hotspot: true } }),
+        defineField({ name: "ptBR", title: "Portuguese (Brazil)", type: "image", options: { hotspot: true } }),
+    ],
+});
