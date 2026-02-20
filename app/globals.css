@@ -22,7 +22,7 @@
   }
 
   p {
-    @apply text-brand-gray-600 leading-relaxed;
+    @apply text-tx-secondary leading-relaxed;
   }
 }
 
