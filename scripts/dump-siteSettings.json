@@ -1,0 +1,56 @@
+{
+  "_createdAt": "2026-02-19T18:46:22Z",
+  "_id": "siteSettings",
+  "_rev": "xTTxsDjEW3CD1lQaoE9FME",
+  "_type": "siteSettings",
+  "_updatedAt": "2026-02-20T13:47:28Z",
+  "defaultLocale": "en",
+  "languages": [
+    {
+      "_key": "en",
+      "code": "en",
+      "label": "English"
+    },
+    {
+      "_key": "ptBR",
+      "code": "pt-br",
+      "label": "Portuguese"
+    }
+  ],
+  "primaryCta": {
+    "href": "#contact",
+    "label": {
+      "en": "Let's Connect",
+      "ptBR": "Vamos Conversar"
+    }
+  },
+  "seoDefaults": {
+    "description": {
+      "en": "Senior Performance Marketing leader with 13+ years experience.",
+      "ptBR": "Líder de Marketing de Performance com 13+ anos de experiência."
+    },
+    "title": {
+      "en": "Suelen Fonteles | Performance Marketing",
+      "ptBR": "Suelen Fonteles | Marketing de Performance"
+    },
+    "twitterCard": "summary_large_image"
+  },
+  "siteName": {
+    "en": "Suelen Fonteles",
+    "ptBR": "Suelen Fonteles"
+  },
+  "socialLinks": [
+    {
+      "_key": "sli",
+      "iconKey": "Linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/suelenfonteles"
+    },
+    {
+      "_key": "sem",
+      "iconKey": "Mail",
+      "label": "Email",
+      "url": "mailto:hi@suelen.com"
+    }
+  ]
+}

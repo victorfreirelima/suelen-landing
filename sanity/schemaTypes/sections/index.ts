@@ -1,4 +1,4 @@
-import { defineField } from "sanity";
+import { defineType, defineField } from "sanity";
 
 export const commonSectionFields = [
     defineField({
@@ -57,23 +57,24 @@ export const commonSectionFields = [
     }),
 ];
 
-export const statsSection = {
+export const statsSection = defineType({
     name: "statsSection",
     title: "Stats Section",
     type: "object",
     fields: [
         ...commonSectionFields,
-        defineField({ name: "title", type: "localeString" }),
-        defineField({ name: "body", type: "localeText" }),
+        defineField({ name: "title", title: "Title", type: "localeString" }),
+        defineField({ name: "body", title: "Body", type: "localeText" }),
         defineField({
             name: "stats",
+            title: "Stats",
             type: "array",
             of: [
                 {
                     type: "object",
                     fields: [
-                        defineField({ name: "label", type: "localeString" }),
-                        defineField({ name: "value", type: "string" }),
+                        defineField({ name: "label", title: "Label", type: "localeString" }),
+                        defineField({ name: "value", title: "Value", type: "string" }),
                     ],
                 },
             ],
@@ -85,26 +86,32 @@ export const statsSection = {
             return { title: `Stats: ${value.title}` };
         },
     },
-};
+});
 
-export const expertiseGridSection = {
+export const expertiseGridSection = defineType({
     name: "expertiseGridSection",
     title: "Expertise Grid",
     type: "object",
     fields: [
         ...commonSectionFields,
-        defineField({ name: "title", type: "localeString" }),
-        defineField({ name: "subtitle", type: "localeString" }),
+        defineField({ name: "title", title: "Title", type: "localeString" }),
+        defineField({ name: "subtitle", title: "Subtitle", type: "localeString" }),
         defineField({
             name: "cards",
+            title: "Cards",
             type: "array",
             of: [
                 {
                     type: "object",
                     fields: [
-                        defineField({ name: "title", type: "localeString" }),
-                        defineField({ name: "description", type: "localeText" }),
-                        defineField({ name: "iconKey", type: "string" }),
+                        defineField({ name: "title", title: "Card Title", type: "localeString" }),
+                        defineField({ name: "description", title: "Description", type: "localeText" }),
+                        defineField({
+                            name: "iconKey",
+                            title: "Icon Key",
+                            type: "string",
+                            description: "Lucide icon name, e.g. Target, TrendingUp, BarChart3",
+                        }),
                     ],
                 },
             ],
@@ -116,30 +123,41 @@ export const expertiseGridSection = {
             return { title: `Expertise: ${value.title}` };
         },
     },
-};
+});
 
-export const frameworksSection = {
+export const frameworksSection = defineType({
     name: "frameworksSection",
     title: "Frameworks Section",
     type: "object",
     fields: [
         ...commonSectionFields,
-        defineField({ name: "title", type: "localeString" }),
-        defineField({ name: "body", type: "localeText" }),
+        defineField({ name: "title", title: "Title", type: "localeString" }),
+        defineField({ name: "body", title: "Body", type: "localeText" }),
         defineField({
             name: "bullets",
+            title: "Bullet Points",
             type: "array",
-            of: [{ type: "localeString" }],
+            // Each bullet is a localeString object stored inline
+            of: [
+                {
+                    type: "object",
+                    fields: [
+                        defineField({ name: "en", title: "English", type: "string" }),
+                        defineField({ name: "ptBR", title: "Portuguese (Brazil)", type: "string" }),
+                    ],
+                },
+            ],
         }),
         defineField({
             name: "sideCardSteps",
+            title: "Side Card Steps",
             type: "array",
             of: [
                 {
                     type: "object",
                     fields: [
-                        defineField({ name: "title", type: "localeString" }),
-                        defineField({ name: "description", type: "localeText" }),
+                        defineField({ name: "title", title: "Step Title", type: "localeString" }),
+                        defineField({ name: "description", title: "Description", type: "localeText" }),
                     ],
                 },
             ],
@@ -151,29 +169,40 @@ export const frameworksSection = {
             return { title: `Frameworks: ${value.title}` };
         },
     },
-};
+});
 
-export const journeySection = {
+export const journeySection = defineType({
     name: "journeySection",
     title: "Journey Section",
     type: "object",
     fields: [
         ...commonSectionFields,
-        defineField({ name: "title", type: "localeString" }),
+        defineField({ name: "title", title: "Title", type: "localeString" }),
         defineField({
             name: "roles",
+            title: "Roles",
             type: "array",
             of: [
                 {
                     type: "object",
                     fields: [
-                        defineField({ name: "title", type: "localeString" }),
-                        defineField({ name: "companyLine", type: "localeString" }),
-                        defineField({ name: "dates", type: "string" }),
+                        defineField({ name: "title", title: "Job Title", type: "localeString" }),
+                        defineField({ name: "companyLine", title: "Company / Context", type: "localeString" }),
+                        defineField({ name: "dates", title: "Date Range", type: "string" }),
                         defineField({
                             name: "bullets",
+                            title: "Bullets",
                             type: "array",
-                            of: [{ type: "localeString" }],
+                            // Each bullet is a localeString object stored inline
+                            of: [
+                                {
+                                    type: "object",
+                                    fields: [
+                                        defineField({ name: "en", title: "English", type: "string" }),
+                                        defineField({ name: "ptBR", title: "Portuguese (Brazil)", type: "string" }),
+                                    ],
+                                },
+                            ],
                         }),
                     ],
                 },
@@ -186,26 +215,27 @@ export const journeySection = {
             return { title: `Journey: ${value.title}` };
         },
     },
-};
+});
 
-export const testimonialsSection = {
+export const testimonialsSection = defineType({
     name: "testimonialsSection",
     title: "Testimonials Section",
     type: "object",
     fields: [
         ...commonSectionFields,
-        defineField({ name: "title", type: "localeString" }),
+        defineField({ name: "title", title: "Title", type: "localeString" }),
         defineField({
             name: "testimonials",
+            title: "Testimonials",
             type: "array",
             of: [
                 {
                     type: "object",
                     fields: [
-                        defineField({ name: "quote", type: "localeText" }),
-                        defineField({ name: "name", type: "string" }),
-                        defineField({ name: "role", type: "localeString" }),
-                        defineField({ name: "company", type: "localeString" }),
+                        defineField({ name: "quote", title: "Quote", type: "localeText" }),
+                        defineField({ name: "name", title: "Person Name", type: "string" }),
+                        defineField({ name: "role", title: "Role", type: "localeString" }),
+                        defineField({ name: "company", title: "Company", type: "localeString" }),
                     ],
                 },
             ],
@@ -217,27 +247,29 @@ export const testimonialsSection = {
             return { title: `Testimonials: ${value.title}` };
         },
     },
-};
+});
 
-export const ctaSection = {
+export const ctaSection = defineType({
     name: "ctaSection",
     title: "CTA Section",
     type: "object",
     fields: [
         ...commonSectionFields,
-        defineField({ name: "title", type: "localeString" }),
-        defineField({ name: "subtitle", type: "localeText" }),
+        defineField({ name: "title", title: "Title", type: "localeString" }),
+        defineField({ name: "subtitle", title: "Subtitle", type: "localeText" }),
         defineField({
             name: "buttons",
+            title: "Buttons",
             type: "array",
             of: [
                 {
                     type: "object",
                     fields: [
-                        defineField({ name: "label", type: "localeString" }),
-                        defineField({ name: "href", type: "string" }),
+                        defineField({ name: "label", title: "Button Label", type: "localeString" }),
+                        defineField({ name: "href", title: "URL or Anchor", type: "string" }),
                         defineField({
                             name: "variant",
+                            title: "Style Variant",
                             type: "string",
                             options: {
                                 list: [
@@ -258,25 +290,26 @@ export const ctaSection = {
             return { title: `CTA: ${value.title}` };
         },
     },
-};
+});
 
-export const footerSection = {
+export const footerSection = defineType({
     name: "footerSection",
     title: "Footer Section",
     type: "object",
     fields: [
         ...commonSectionFields,
-        defineField({ name: "copyright", type: "localeString" }),
-        defineField({ name: "locationLine", type: "localeString" }),
+        defineField({ name: "copyright", title: "Copyright Line", type: "localeString" }),
+        defineField({ name: "locationLine", title: "Location Line", type: "localeString" }),
         defineField({
             name: "links",
+            title: "Footer Links",
             type: "array",
             of: [
                 {
                     type: "object",
                     fields: [
-                        defineField({ name: "label", type: "localeString" }),
-                        defineField({ name: "href", type: "string" }),
+                        defineField({ name: "label", title: "Link Label", type: "localeString" }),
+                        defineField({ name: "href", title: "URL", type: "string" }),
                     ],
                 },
             ],
@@ -288,4 +321,4 @@ export const footerSection = {
             return { title: `Footer: ${value.title}` };
         },
     },
-};
+});
