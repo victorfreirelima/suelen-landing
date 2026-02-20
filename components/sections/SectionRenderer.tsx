@@ -35,6 +35,7 @@ export default function SectionRenderer({ section, lang }: SectionProps) {
     const bgClasses: Record<string, string> = {
         white: "bg-white text-gray-900",
         gray: "bg-[#F8F9FA] text-gray-900",
+        "blue-light": "bg-[#EEF2F7] text-gray-900",
         black: "bg-gradient-to-b from-[#0F172A] to-[#1E293B] text-white",
         brand: "bg-[#205BF0] text-white",
     };

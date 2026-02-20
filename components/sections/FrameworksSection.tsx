@@ -43,8 +43,8 @@ export default function FrameworksSection({ section, lang }: FrameworksSectionPr
                 </ul>
             </div>
 
-            {/* Right — Floating Card */}
-            <div className="bg-[#EEF2F7] p-[40px] rounded-[24px] flex flex-col gap-[36px] mt-[8px]">
+            {/* Right — Floating Card: white card on gray section bg */}
+            <div className="bg-white p-[40px] rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.07)] flex flex-col gap-[36px] mt-[8px]">
                 {section.sideCardSteps?.map((step, i) => (
                     <div key={i} className="flex gap-[18px] items-start">
                         <div className="flex-shrink-0 w-[40px] h-[40px] rounded-full bg-[#0F172A] text-white flex items-center justify-center text-[14px] font-bold mt-[2px]">
