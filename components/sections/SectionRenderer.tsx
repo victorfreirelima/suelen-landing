@@ -35,7 +35,7 @@ export default function SectionRenderer({ section, lang }: SectionProps) {
     const bgClasses: Record<string, string> = {
         white: "bg-white text-gray-900",
         gray: "bg-[#F8F9FA] text-gray-900",
-        black: "bg-gradient-to-b from-[#111827] to-[#0A0F1F] text-white",
+        black: "bg-gradient-to-b from-[#0F172A] to-[#1E293B] text-white",
         brand: "bg-[#205BF0] text-white",
     };
 
@@ -52,6 +52,20 @@ export default function SectionRenderer({ section, lang }: SectionProps) {
         narrow: "max-w-[900px]",
         wide: "max-w-[1440px]",
     };
+
+    // Footer section gets a special dedicated wrapper
+    if (section._type === "footerSection") {
+        return (
+            <footer
+                id={section.sectionId}
+                className="bg-[#F9FAFB] border-t border-[#E5E7EB]"
+            >
+                <div className="max-w-[1200px] mx-auto px-8 py-[32px]">
+                    <Component section={section} lang={lang} />
+                </div>
+            </footer>
+        );
+    }
 
     return (
         <section

@@ -25,13 +25,13 @@ export default function JourneySection({ section, lang }: JourneySectionProps) {
             </div>
             <div className="max-w-[720px] mx-auto">
                 {section.roles?.map((role, i) => (
-                    <div key={i} className="relative pl-[44px] border-l border-[#E5E7EB] pb-[48px] last:pb-0">
+                    <div key={i} className="relative pl-[44px] border-l-2 border-[#E5E7EB] pb-[56px] last:pb-0">
                         {/* Timeline dot */}
-                        <div className="absolute left-[-4px] top-[6px] w-[7px] h-[7px] bg-[#0A0F1F]" />
+                        <div className="absolute left-[-6px] top-[4px] w-[12px] h-[12px] rounded-full bg-[#0A0F1F] border-2 border-white" />
 
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-[12px] mb-[6px]">
                             <h3 className="text-[17px] font-extrabold tracking-[-0.01em] text-[#0A0F1F]">{pickLocalized<string>(role.title, lang)}</h3>
-                            <span className="self-start sm:self-auto px-[8px] py-[3px] rounded-[4px] bg-[#EEF2FF] text-[#205BF0] text-[10px] uppercase tracking-[0.05em] font-bold">
+                            <span className="self-start sm:self-auto px-[10px] py-[4px] rounded-[6px] bg-[#EEF2FF] text-[#205BF0] text-[10px] uppercase tracking-[0.05em] font-bold whitespace-nowrap">
                                 {role.dates}
                             </span>
                         </div>

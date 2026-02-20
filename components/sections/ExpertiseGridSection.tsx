@@ -25,14 +25,14 @@ export default function ExpertiseGridSection({ section, lang }: ExpertiseGridSec
                 <h2 className="text-[28px] font-extrabold tracking-[-0.01em] text-[#0A0F1F] mb-3">{title}</h2>
                 <p className="text-[13px] text-[#4B5563] font-normal">{subtitle}</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px]">
                 {section.cards?.map((card, i) => {
                     const cardTitle = pickLocalized<string>(card.title, lang);
                     const cardDesc = pickLocalized<string>(card.description, lang);
                     const Icon = (Icons as any)[card.iconKey] || Icons.Layout;
 
                     return (
-                        <div key={i} className="px-7 py-8 rounded-[16px] bg-white border border-[#E5E7EB]/60 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_-5px_rgba(0,0,0,0.06)] transition-all flex flex-col items-start">
+                        <div key={i} className="px-[28px] py-[28px] rounded-[16px] bg-white border border-[#E5E7EB] shadow-[0_4px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.07)] transition-all flex flex-col items-start">
                             <div className="w-[38px] h-[38px] bg-[#EFF6FF] rounded-[8px] flex items-center justify-center mb-5">
                                 <Icon className="w-[18px] h-[18px] text-[#205BF0]" strokeWidth={2.5} />
                             </div>
