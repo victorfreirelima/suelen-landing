@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import { pickLocalized } from "@/lib/localization";
 import DevWarningBanner from "@/components/DevWarningBanner";
+import PixelPerfectOverlay from "@/components/PixelPerfectOverlay";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -81,6 +82,7 @@ export default async function SiteLayout({
                 <Navbar lang={lang} siteSettings={siteSettings} navigation={landingPage?.navigation} />
                 {children}
                 <DevWarningBanner />
+                <PixelPerfectOverlay />
             </body>
         </html>
     );
