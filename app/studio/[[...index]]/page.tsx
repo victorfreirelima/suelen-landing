@@ -1,7 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Studio from "./Studio";
+import dynamic from "next/dynamic";
+
+const Studio = dynamic(() => import("./Studio"), { ssr: false });
 
 export default function StudioPage() {
     return <Studio />;

@@ -1,3 +1,4 @@
+import React from "react";
 import { localeString, localeText, localeImage } from "./objects/localeTypes";
 import { landingPage } from "./singletons/landingPage";
 import { siteSettings } from "./singletons/siteSettings";
