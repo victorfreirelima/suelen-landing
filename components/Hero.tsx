@@ -25,7 +25,7 @@ export default function Hero({ lang, hero, siteSettings }: HeroProps) {
     const socialLinks = siteSettings?.socialLinks || [];
 
     return (
-        <section className="pt-[140px] pb-20 lg:pt-[190px] lg:pb-[140px] px-8 overflow-hidden bg-gradient-to-br from-[#EEF2FF] via-white to-[#EFF6FF]">
+        <section className="pt-[160px] pb-20 lg:pt-[215px] lg:pb-[140px] px-8 overflow-hidden bg-gradient-to-br from-[#EEF2FF] via-white to-[#EFF6FF]">
             <div className="max-w-[1200px] mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-center">
                 {/* Left Content */}
                 <div className="max-w-[580px]">

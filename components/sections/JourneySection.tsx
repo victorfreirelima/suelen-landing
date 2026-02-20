@@ -42,9 +42,9 @@ export default function JourneySection({ section, lang }: JourneySectionProps) {
 
                         <ul className="space-y-[12px]">
                             {role.bullets?.map((bullet: any, j: number) => (
-                                <li key={j} className="flex gap-[12px] items-start text-[13px] text-[#4B5563] leading-[1.8] font-normal">
+                                <li key={j} className="flex gap-[12px] items-start text-[13px] leading-[1.8] font-normal">
                                     <div className="w-[4px] h-[4px] rounded-full bg-[#4B5563] mt-[8px] flex-shrink-0" />
-                                    <span>{pickLocalized<string>(bullet, lang)}</span>
+                                    <span className="text-[#4B5563] [&_a]:text-inherit [&_a]:no-underline">{pickLocalized<string>(bullet, lang)}</span>
                                 </li>
                             ))}
                         </ul>
