@@ -33,10 +33,10 @@ export default function SectionRenderer({ section, lang }: SectionProps) {
 
     // Map backgroundStyle to Tailwind classes
     const bgClasses: Record<string, string> = {
-        white: "bg-white text-black",
-        gray: "bg-gray-50 text-black",
-        black: "bg-black text-white",
-        brand: "bg-blue-600 text-white",
+        white: "bg-white text-gray-900",
+        gray: "bg-[#F8F9FA] text-gray-900",
+        black: "bg-[#0A0F1F] text-white",
+        brand: "bg-[#205BF0] text-white",
     };
 
     // Map paddingStyle to Tailwind classes

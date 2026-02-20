@@ -38,27 +38,12 @@ export default function Navbar({ lang, siteSettings, navigation }: NavbarProps) 
                     ))}
                 </div>
 
-                {/* Lang Switch & CTA */}
-                <div className="flex items-center space-x-6">
-                    <div className="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-wider opacity-60">
-                        <Link
-                            href="/en"
-                            className={lang === "en" ? "text-blue-600 underline underline-offset-4" : "hover:opacity-100 transition-opacity"}
-                        >
-                            EN
-                        </Link>
-                        <span className="opacity-20">|</span>
-                        <Link
-                            href="/pt-br"
-                            className={lang === "pt-br" ? "text-blue-600 underline underline-offset-4" : "hover:opacity-100 transition-opacity"}
-                        >
-                            PT-BR
-                        </Link>
-                    </div>
+                {/* CTA only */}
+                <div className="flex items-center">
                     {primaryCta && (
                         <Link
                             href={primaryCta.href}
-                            className="hidden sm:block bg-black text-white px-6 py-2.5 rounded-md text-sm font-bold hover:opacity-90 transition-all"
+                            className="hidden sm:inline-flex bg-[#0A0F1F] text-white px-6 py-2.5 rounded-lg text-[13px] font-bold tracking-wide hover:bg-black transition-all"
                         >
                             {pickLocalized<string>(primaryCta.label, lang)}
                         </Link>

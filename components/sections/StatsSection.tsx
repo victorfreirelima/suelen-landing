@@ -23,25 +23,13 @@ export default function StatsSection({ section, lang }: StatsSectionProps) {
                 <div className="h-[1px] w-12 bg-blue-600"></div>
                 <h2 className="text-2xl font-extrabold">{title}</h2>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-6 mt-8">
                 {body?.split('\n\n').map((para, i) => (
-                    <p key={i} className="text-base leading-relaxed opacity-90">
+                    <p key={i} className="text-[17px] leading-relaxed opacity-80 font-medium">
                         {para}
                     </p>
                 ))}
             </div>
-            {section.stats && (
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-                    {section.stats.map((stat, i) => (
-                        <div key={i} className="text-center">
-                            <div className="text-3xl font-bold mb-1">{stat.value}</div>
-                            <div className="text-sm uppercase tracking-wider opacity-70">
-                                {pickLocalized<string>(stat.label, lang)}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            )}
         </div>
     );
 }
