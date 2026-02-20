@@ -1,0 +1,433 @@
+{
+  "_id": "landingPage",
+  "_type": "landingPage",
+  "seo": {
+    "title": {
+      "en": "Suelen Fonteles – Paid Media & Performance Marketing",
+      "ptBR": "Suelen Fonteles – Mídia Paga & Marketing de Performance"
+    },
+    "description": {
+      "en": "Senior performance marketing expert with 13+ years of experience transforming complex data into profitable acquisition strategies for high-growth brands.",
+      "ptBR": "Especialista sênior em marketing de performance com mais de 13 anos de experiência transformando dados complexos em estratégias lucrativas de aquisição para marcas em crescimento acelerado."
+    }
+  },
+  "hero": {
+    "badgeText": {
+      "en": "AVAILABLE FOR US & CANADA OPPORTUNITIES",
+      "ptBR": "DISPONÍVEL PARA OPORTUNIDADES NOS EUA & CANADÁ"
+    },
+    "headline": {
+      "en": "I Build Scalable\nGrowth Through\n|Paid Media|",
+      "ptBR": "Eu Construo Crescimento\nEscalável com\n|Mídia Paga|"
+    },
+    "subheadline": {
+      "en": "Senior performance marketing expert with 13+ years of experience transforming complex data into profitable acquisition strategies for high-growth brands.",
+      "ptBR": "Especialista sênior em marketing de performance com mais de 13 anos de experiência transformando dados complexos em estratégias lucrativas de aquisição para marcas em crescimento acelerado."
+    },
+    "primaryCta": {
+      "label": {
+        "en": "View Experience",
+        "ptBR": "Ver Experiência"
+      },
+      "href": "#experience"
+    },
+    "secondaryCta": {
+      "label": {
+        "en": "Let's Connect",
+        "ptBR": "Vamos Conversar"
+      },
+      "href": "#contact"
+    },
+    "portraitImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-ede0af909d2872875e872a841ab220a250b591b4-1024x1536-png",
+        "_type": "reference"
+      }
+    }
+  },
+  "navigation": [
+    {
+      "_key": "nav1",
+      "id": "experience",
+      "label": {
+        "en": "Experience",
+        "ptBR": "Experiência"
+      },
+      "targetSectionId": "experience"
+    },
+    {
+      "_key": "nav2",
+      "id": "expertise",
+      "label": {
+        "en": "Expertise",
+        "ptBR": "Especialidades"
+      },
+      "targetSectionId": "expertise"
+    },
+    {
+      "_key": "nav3",
+      "id": "strategy",
+      "label": {
+        "en": "Strategy",
+        "ptBR": "Estratégia"
+      },
+      "targetSectionId": "strategy"
+    }
+  ],
+  "sections": [
+    {
+      "_key": "sec_stats",
+      "_type": "statsSection",
+      "sectionId": "experience",
+      "enabled": true,
+      "backgroundStyle": "white",
+      "paddingStyle": "normal",
+      "maxWidth": "default",
+      "title": {
+        "en": "13+ Years of Strategic Impact",
+        "ptBR": "13+ Anos de Impacto Estratégico"
+      },
+      "body": {
+        "en": "With a career built at the intersection of data and creativity, I specialize in managing multi-million dollar budgets across global markets. My approach isn’t just about spending — it’s about efficient scaling and sustainable CAC optimization.\n\nI’ve mastered the intricacies of Google Ads, Meta Ads, and advanced GA4 tracking to ensure every dollar is accounted for. My expertise lies in translating high-level business objectives into tactical media plans that deliver measurable ROI for North American markets.",
+        "ptBR": "Com uma carreira construída na interseção entre dados e criatividade, sou especialista no gerenciamento de budgets multimilionários em mercados globais. Minha abordagem não é apenas sobre investir — é sobre escalar com eficiência e otimizar o CAC de forma sustentável.\n\nDomino as complexidades do Google Ads, Meta Ads e o rastreamento avançado do GA4 para garantir que cada centavo seja contabilizado. Minha especialidade está em traduzir objetivos de negócios de alto nível em planos de mídia táticos que entregam ROI mensurável para mercados norte-americanos."
+      }
+    },
+    {
+      "_key": "sec_expertise",
+      "_type": "expertiseGridSection",
+      "sectionId": "expertise",
+      "enabled": true,
+      "backgroundStyle": "gray",
+      "paddingStyle": "normal",
+      "maxWidth": "default",
+      "title": {
+        "en": "Core Expertise",
+        "ptBR": "Especialidades Principais"
+      },
+      "subtitle": {
+        "en": "Precision-engineered marketing strategies designed for modern performance demands.",
+        "ptBR": "Estratégias de marketing orientadas por precisão para demandas modernas de performance."
+      },
+      "cards": [
+        {
+          "_key": "card1",
+          "iconKey": "TrendingUp",
+          "title": {
+            "en": "Paid Media Strategy",
+            "ptBR": "Estratégia de Mídia Paga"
+          },
+          "description": {
+            "en": "Full-funnel channel strategy aligned with revenue targets and scalability goals.",
+            "ptBR": "Estratégia de canal full-funnel alinhada aos objetivos de receita e escalabilidade."
+          }
+        },
+        {
+          "_key": "card2",
+          "iconKey": "Zap",
+          "title": {
+            "en": "Performance Optimization",
+            "ptBR": "Otimização de Performance"
+          },
+          "description": {
+            "en": "Advanced testing frameworks, bid strategies, and creative iteration for maximum ROAS.",
+            "ptBR": "Frameworks de testes avançados e iteração criativa para maximizar o ROAS."
+          }
+        },
+        {
+          "_key": "card3",
+          "iconKey": "Target",
+          "title": {
+            "en": "Advanced Tracking",
+            "ptBR": "Tracking Avançado"
+          },
+          "description": {
+            "en": "GA4, server-side tracking, attribution modeling, and data integrity systems.",
+            "ptBR": "GA4, eventos server-side, modelagem de atribuição e integridade de dados."
+          }
+        },
+        {
+          "_key": "card4",
+          "iconKey": "Layers",
+          "title": {
+            "en": "Full-Funnel Reporting",
+            "ptBR": "Relatórios Full-Funnel"
+          },
+          "description": {
+            "en": "Clear, board-level performance reporting aligned with business KPIs.",
+            "ptBR": "Relatórios de performance claros e de nível executivo alinhados aos KPIs de negócios."
+          }
+        },
+        {
+          "_key": "card5",
+          "iconKey": "Wallet",
+          "title": {
+            "en": "Budget Management",
+            "ptBR": "Gestão de Orçamento"
+          },
+          "description": {
+            "en": "Scaling campaigns responsibly while protecting CAC and margin efficiency.",
+            "ptBR": "Escalação de campanhas de forma responsável e proteção da eficiência da margem e do CAC."
+          }
+        },
+        {
+          "_key": "card6",
+          "iconKey": "Search",
+          "title": {
+            "en": "Account Audits",
+            "ptBR": "Auditorias de Contas"
+          },
+          "description": {
+            "en": "Deep diagnostic audits that unlock hidden growth opportunities.",
+            "ptBR": "Auditorias diagnósticas profundas que desbloqueiam oportunidades ocultas de crescimento."
+          }
+        }
+      ]
+    },
+    {
+      "_key": "sec_frameworks",
+      "_type": "frameworksSection",
+      "sectionId": "strategy",
+      "enabled": true,
+      "backgroundStyle": "white",
+      "paddingStyle": "normal",
+      "maxWidth": "default",
+      "title": {
+        "en": "Structuring Scalable Frameworks",
+        "ptBR": "Estruturando Frameworks Escaláveis"
+      },
+      "body": {
+        "en": "Growth is not accidental. It is engineered.",
+        "ptBR": "O crescimento não é acidental. É coreografado com precisão analítica."
+      },
+      "bullets": [
+        {
+          "_key": "fb1",
+          "en": "Data-inspired creative decision making",
+          "ptBR": "Decisões criativas inspiradas por dados"
+        },
+        {
+          "_key": "fb2",
+          "en": "Advanced audience segmentation (1st party data focus)",
+          "ptBR": "Segmentação avançada de público (dados primários)"
+        },
+        {
+          "_key": "fb3",
+          "en": "Sustainable performance growth models",
+          "ptBR": "Modelos sustentáveis de crescimento de performance"
+        }
+      ],
+      "sideCardSteps": [
+        {
+          "_key": "fs1",
+          "title": {
+            "en": "Audit & Framework",
+            "ptBR": "Auditoria & Framework"
+          },
+          "description": {
+            "en": "Identify structural inefficiencies and growth blockers.",
+            "ptBR": "Identificação de ineficiências estruturais e bloqueios."
+          }
+        },
+        {
+          "_key": "fs2",
+          "title": {
+            "en": "Alpha/Beta Launch",
+            "ptBR": "Lançamento Alfa/Beta"
+          },
+          "description": {
+            "en": "Build controlled experimentation systems.",
+            "ptBR": "Construção de sistemas rigorosos de experimentação controlada."
+          }
+        },
+        {
+          "_key": "fs3",
+          "title": {
+            "en": "Sustainable Scaling",
+            "ptBR": "Escala Sustentável"
+          },
+          "description": {
+            "en": "Scale winning campaigns without breaking profitability.",
+            "ptBR": "Escala de campanhas vencedoras preservando a rentabilidade."
+          }
+        }
+      ]
+    },
+    {
+      "_key": "sec_journey",
+      "_type": "journeySection",
+      "sectionId": "journey",
+      "enabled": true,
+      "backgroundStyle": "white",
+      "paddingStyle": "compact",
+      "maxWidth": "narrow",
+      "title": {
+        "en": "Professional Journey",
+        "ptBR": "Jornada Profissional"
+      },
+      "roles": [
+        {
+          "_key": "jr1",
+          "title": {
+            "en": "Head of Paid Media",
+            "ptBR": "Head de Mídia Paga"
+          },
+          "companyLine": {
+            "en": "Global Digital Agency",
+            "ptBR": "Agência Digital Global"
+          },
+          "dates": "Present – 2024",
+          "bullets": [
+            {
+              "_key": "jrb11",
+              "en": "Managed multi-channel budgets across Google and Meta for US-based clients.",
+              "ptBR": "Gestão de orçamentos multi-canal focados em Google e Meta para o mercado americano."
+            },
+            {
+              "_key": "jrb12",
+              "en": "Reduced CAC while scaling spend through rigorous account restructuring.",
+              "ptBR": "Redução do CAC ao mesmo tempo em que o investimento era ampliado utilizando forte reestruturação de contas."
+            },
+            {
+              "_key": "jrb13",
+              "en": "Led reporting cadence and performance systems across teams.",
+              "ptBR": "Liderou a cultura e sistemas de relatórios de desempenho e cadência entre as equipes e stakeholders."
+            }
+          ]
+        },
+        {
+          "_key": "jr2",
+          "title": {
+            "en": "Senior Paid Media Manager",
+            "ptBR": "Gerente Sênior de Mídia Paga"
+          },
+          "companyLine": {
+            "en": "Direct-to-Consumer brand",
+            "ptBR": "Marca Direct-to-Consumer"
+          },
+          "dates": "2021 – 2016",
+          "bullets": [
+            {
+              "_key": "jrb21",
+              "en": "Scaled Meta and Google budgets from $2k to $50k/month while protecting ROAS.",
+              "ptBR": "Crescimento explosivo e agressivo em Meta e Google Ads mantendo segurança de margem."
+            },
+            {
+              "_key": "jrb22",
+              "en": "Implemented full-funnel measurement to reduce attribution blind spots.",
+              "ptBR": "Aplicação e modelagem de atribuição para reduzir significativamente as zonas cegas."
+            },
+            {
+              "_key": "jrb23",
+              "en": "Partnered with creative team to develop high-performing UGC concepts.",
+              "ptBR": "Trabalho lado a lado com times criativos para o desenvolvimento e testes contínuos de criativos originais."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_key": "sec_testimonials",
+      "_type": "testimonialsSection",
+      "sectionId": "testimonials",
+      "enabled": true,
+      "backgroundStyle": "black",
+      "paddingStyle": "spacious",
+      "maxWidth": "default",
+      "title": {
+        "en": "Why Work With Me?",
+        "ptBR": "Por Que Trabalhar Comigo?"
+      },
+      "testimonials": [
+        {
+          "_key": "t1",
+          "quote": {
+            "en": "Suelen’s ability to navigate complex international markets while maintaining laser focus on ROI sets her apart as a true performance leader.",
+            "ptBR": "A habilidade da Suelen de atuar em mercados internacionais competitivos com foco absoluto em ROI a diferencia como uma autêntica líder de performance."
+          },
+          "name": "John Doe",
+          "role": {
+            "en": "VP of Marketing",
+            "ptBR": "VP de Marketing"
+          },
+          "company": {
+            "en": "Global Fintech Brand",
+            "ptBR": "E-Commerce Global"
+          }
+        }
+      ]
+    },
+    {
+      "_key": "sec_cta",
+      "_type": "ctaSection",
+      "sectionId": "contact",
+      "enabled": true,
+      "backgroundStyle": "gray",
+      "paddingStyle": "normal",
+      "maxWidth": "default",
+      "title": {
+        "en": "Let’s Build Sustainable Growth",
+        "ptBR": "Vamos Construir Crescimento Sustentável"
+      },
+      "subtitle": {
+        "en": "Currently open to Senior Lead or Management positions in the US and Canada. Let’s discuss how my expertise can drive your performance goals.",
+        "ptBR": "Atualmente aberta a posições de Liderança e Gerência Sênior nos EUA e Canadá. Vamos conversar sobre como minha expertise pode potencializar suas metas de performance."
+      },
+      "buttons": [
+        {
+          "_key": "cbtn1",
+          "label": {
+            "en": "LinkedIn Profile",
+            "ptBR": "Perfil do LinkedIn"
+          },
+          "href": "https://www.linkedin.com/in/REPLACE_ME",
+          "variant": "primary"
+        },
+        {
+          "_key": "cbtn2",
+          "label": {
+            "en": "Send an Email",
+            "ptBR": "Enviar Email"
+          },
+          "href": "mailto:hello@example.com",
+          "variant": "secondary"
+        }
+      ]
+    },
+    {
+      "_key": "sec_footer",
+      "_type": "footerSection",
+      "sectionId": "footer",
+      "enabled": true,
+      "backgroundStyle": "white",
+      "paddingStyle": "compact",
+      "maxWidth": "default",
+      "copyright": {
+        "en": "© 2026 Suelen Fonteles. All rights reserved.",
+        "ptBR": "© 2026 Suelen Fonteles. Todos os direitos reservados."
+      },
+      "locationLine": {
+        "en": "Based in Brazil • Available for US & CA",
+        "ptBR": "Localizada no Brasil • Disponível para EUA & Canadá"
+      },
+      "links": [
+        {
+          "_key": "fl1",
+          "label": {
+            "en": "LinkedIn",
+            "ptBR": "LinkedIn"
+          },
+          "href": "https://linkedin.com/in/REPLACE_ME"
+        },
+        {
+          "_key": "fl2",
+          "label": {
+            "en": "Email",
+            "ptBR": "Email"
+          },
+          "href": "mailto:hello@example.com"
+        }
+      ]
+    }
+  ]
+}
