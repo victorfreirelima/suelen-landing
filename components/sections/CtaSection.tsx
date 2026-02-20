@@ -20,7 +20,7 @@ export default function CtaSection({ section, lang }: CtaSectionProps) {
     const subtitle = pickLocalized<string>(section.subtitle, lang);
 
     return (
-        <div className="text-center w-full flex flex-col items-center py-8">
+        <div className="text-center w-full flex flex-col items-center py-16 lg:py-24">
             <h2 className="text-[36px] font-extrabold tracking-[-0.01em] text-[#0A0F1F] mb-[20px]">{title}</h2>
             <p className="text-[13px] text-[#4B5563] mb-[40px] leading-[1.7] font-normal max-w-[480px]">
                 {subtitle}

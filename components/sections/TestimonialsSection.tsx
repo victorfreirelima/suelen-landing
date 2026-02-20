@@ -22,7 +22,7 @@ export default function TestimonialsSection({ section, lang }: TestimonialsSecti
         {
             Icon: Icons.Building2,
             title: isPt ? "Formação em Agência" : "Agency-Trained",
-            desc: isPt ? "Forjada em redes de alta pressão e desafios de mídia de primeiro nível." : "Bred in pressure-cooker networks and top tier media challenges.",
+            desc: isPt ? "Exposição profunda a vários setores e desafios complexos de mercado." : "Deep exposure to various verticals and complex market challenges.",
         },
         {
             Icon: Icons.LineChart,
@@ -64,19 +64,17 @@ export default function TestimonialsSection({ section, lang }: TestimonialsSecti
             {/* Right side: Testimonial Card */}
             <div>
                 {section.testimonials?.slice(0, 1).map((t, i) => (
-                    <div key={i} className="p-[48px] rounded-[24px] bg-white/[0.02] border border-white/[0.08] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] relative">
-                        <p className="text-[20px] italic opacity-90 leading-[1.8] font-serif mb-[36px]">
+                    <div key={i} className="p-[40px] rounded-[20px] bg-white/[0.05] border border-white/[0.1] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] relative">
+                        <p className="text-[17px] italic opacity-95 leading-[1.75] font-serif mb-[32px]">
                             "{pickLocalized<string>(t.quote, lang)}"
                         </p>
-                        <div className="flex items-center gap-[16px]">
-                            <div className="w-[40px] h-[40px] rounded-full bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
-                                <Icons.User className="w-[20px] h-[20px] text-white/50" />
+                        <div className="flex items-center gap-[14px]">
+                            <div className="w-[36px] h-[36px] rounded-full bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <Icons.User className="w-[18px] h-[18px] text-white/50" />
                             </div>
                             <div>
-                                <div className="font-extrabold text-[14px]">{t.name}</div>
-                                <div className="text-[10px] font-bold tracking-[0.05em] uppercase opacity-50 mt-[4px]">
-                                    {pickLocalized<string>(t.role, lang)} @ {pickLocalized<string>(t.company, lang)}
-                                </div>
+                                <div className="font-extrabold text-[13px]">{pickLocalized<string>(t.role, lang)}</div>
+                                <div className="text-[10px] font-bold tracking-[0.08em] uppercase opacity-50 mt-[3px]">{pickLocalized<string>(t.company, lang)}</div>
                             </div>
                         </div>
                     </div>
